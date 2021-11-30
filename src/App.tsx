@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { FC } from 'react';
 import './App.css';
+import { Button, Layout, Menu, Breadcrumb } from 'antd';
+const { Header, Content, Footer } = Layout;
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App: FC = () => (
+  <div className="App">
+    <Layout className="layout">
+      <Header>
+        <div className="logo" />
+        <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['1']}>
+          {new Array(3).fill(null).map((_, index) => {
+            const key = index + 1;
+            return <Menu.Item key={key}>{`nav ${key}`}</Menu.Item>;
+          })}
+        </Menu>
+      </Header>
+    </Layout>
+  </div>
+);
 
 export default App;
