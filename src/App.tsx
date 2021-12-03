@@ -23,7 +23,7 @@ const App = () => {
           <div className="card">
             {playersState.players.map((player: PlayerModel) => (
               <div className="site-card-border-less-wrapper">
-                <Card key={player.id} style={{ width: 300 }}>
+                <Card key={player.id} style={{ width: 280 }}>
                   <h1>
                     {player.first_name} {player.last_name}
                   </h1>
